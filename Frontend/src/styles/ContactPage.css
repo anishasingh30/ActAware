@@ -1,0 +1,159 @@
+/* Container + theme transitions */
+.contact-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  
+    background: #fdfcf9;
+    color: #333;
+    transition: background 0.4s, color 0.4s;
+    padding: 40px 20px;
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Dark mode */
+  .contact-page.dark {
+    background: #1f1f1f;
+    color: #eee;
+  }
+  
+  /* Header with title + theme toggle icon */
+  .contact-header {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-left: 800px;
+  }
+  
+  .contact-header h1 {
+    font-size: 2.4rem;
+    margin: 0;
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s;
+  }
+  .contact-page.dark .theme-toggle {
+    color: #eee;
+  }
+  
+  /* Contact Container with two cards side by side */
+  .contact-container {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin-bottom: 40px;
+    justify-content: center; 
+  }
+  
+  /* Card Styles */
+  .contact-card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  
+  .contact-card h2 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .contact-card p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  /* Dark mode overrides for cards */
+  .contact-page.dark .contact-card {
+    background: #2c2c2c;
+    border-color: #444;
+  }
+  .contact-page.dark .contact-card h2 {
+    color: #fff;
+  }
+  .contact-page.dark .contact-card p {
+    color: #ccc;
+  }
+  
+  /* CTA Buttons */
+  .contact-button {
+    display: inline-block;
+    background: #ec244f;
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: background 0.3s;
+    font-size: 1rem;
+  }
+  
+  .contact-button:hover {
+    background: #ca1540;   /* Darker on hover */
+  }
+  
+  /* Offices Section */
+  .offices-section {
+    width: 100%;
+    max-width: 1000px;
+    text-align: center;
+  }
+  
+  .offices-section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .offices-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center; /* offices text aligned left for clarity */
+  }
+  
+  .offices-grid h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  .offices-grid p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #555;
+  }
+  
+  /* Dark mode overrides for offices */
+  .contact-page.dark .offices-grid p {
+    color: #ccc;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .contact-container {
+      flex-direction: column;
+    }
+    .offices-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

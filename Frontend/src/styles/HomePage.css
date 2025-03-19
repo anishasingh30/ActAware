@@ -1,0 +1,582 @@
+/* Remove default margins/padding for entire page */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* THEME CONTAINER */
+.homepage-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light vs Dark Theme */
+.homepage-container.light {
+  background-color: #ffffff;
+  color: #000;
+}
+.homepage-container.dark {
+  background-color: #000000;
+  color: #fff;
+}
+
+/* TOP BAR 
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #212121;
+  padding: 8px 16px;
+  height: 56px;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.site-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+} 
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-dropdown {
+  padding: 4px 6px;
+  padding-right: 50px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+} */
+
+/* SIDE NAV */
+.side-nav {
+  width: 180px;
+  background-color: #f8f8f8;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.6);
+  height: calc(100vh - 5px);
+  position: fixed;
+  left: 0;
+  padding: 90px 0;
+  overflow-y: auto;
+}
+
+/* If you want dynamic hero background in light/dark mode:*/
+.homepage-container.light .side-nav {
+  background: #fff url("../../public/assets/side-img8.jpeg") center center / cover;
+}
+.homepage-container.light .side-nav  .side-nav-item{
+  color: #000000;
+}
+.homepage-container.dark .side-nav {
+  background: #000 url("../../public/assets/side-img11.jpeg") center center / cover;
+} 
+.homepage-container.dark .side-nav  .side-nav-item{
+  color: #fff;
+}
+
+.side-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 10px;
+}
+
+.side-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.side-nav-item:hover {
+  background-color: #ddd;
+}
+
+.side-nav .theme-dropdown {
+  margin-top: 280px;
+  padding: px 55px;
+  border-radius: 40px;
+  border: 1px solid #0a0a0a;
+  cursor: pointer;
+}
+
+.theme-dropdown select {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  color: inherit;
+  outline: none;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 190px; /* account for side nav width */
+  margin-top: px;   /* account for topbar height */
+  padding: 20px;
+  flex: 1;
+}
+
+/* HERO SECTION (Unchanged) */
+.hero-section {
+  background: #171717;  /* or an image if you want */
+  padding: 50px;
+  margin-bottom: 40px;
+}
+/* If you want dynamic hero background in light/dark mode:*/
+.homepage-container.light .hero-section {
+  background: #fff url("../../public/assets/img4.jpeg") center center / cover;
+}
+.homepage-container.dark .hero-section {
+  background: #000 url("../../public/assets/img2.jpeg") center center / cover;
+} 
+
+.hero-content {
+  max-width: 900px;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay if needed for readability */
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.browse-btn,
+.highlight-btn {
+  background-color: #ec244f;
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+/* BRAND-STORY SECTION */
+.brand-story-section {
+  width: 45%;
+  margin: 0 auto;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* BRAND-STORY CONTENT (TEXT) */
+.brand-story-content {
+  flex: 1;
+  max-width: 600px;
+  text-align: center; /* Center heading & paragraph text */
+}
+
+.brand-story-content h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.brand-story-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+/* READ-MORE BUTTON (MORE VISIBLE) */
+.read-more-link {
+  display: inline-block;
+  background-color: #ec244f;   /* Button background color */
+  color: #fff;                 /* Button text color */
+  padding: 10px 20px;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1rem;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.read-more-link:hover {
+  background-color: #ca1540;   /* Darker on hover */
+  transform: scale(1.05);      /* Subtle hover effect */
+}
+
+
+/* WHY JOIN SECTION */
+.why-join-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+}
+
+/* Dark Mode override for the entire section */
+.homepage-container.dark .why-join-section {
+  background: #2c2c2c;
+  border-color: #444;
+  color: #fff;
+}
+
+.why-join-title {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.why-join-content {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Left side: 4 cards */
+.why-join-left {
+  flex: 2;
+}
+
+.why-join-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.why-join-card {
+  background: #f9f9f9;
+  border-radius: 6px;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+.why-join-card:hover {
+  transform: translateY(-3px);
+}
+.why-join-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+.why-join-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Dark Mode override for the cards */
+.homepage-container.dark .why-join-card {
+  background: #333;
+  border: 1px solid #444;
+}
+.homepage-container.dark .why-join-card p {
+  color: #ccc;
+}
+
+/* Right side: admission countdown + form */
+.why-join-right {
+  flex: 1.2;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Dark Mode override for right panel */
+.homepage-container.dark .why-join-right {
+  background: #333;
+  border-color: #444;
+  color: #fff;
+}
+
+.admission-deadline h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.countdown {
+  display: flex;
+  gap: 10px;
+}
+
+.time-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px 15px;
+  text-align: center;
+}
+.time-box span {
+  font-size: 1.2rem;
+  display: block;
+}
+.time-box small {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* Dark Mode override for the countdown boxes */
+.homepage-container.dark .time-box {
+  background: #444;
+  border-color: #555;
+}
+.homepage-container.dark .time-box span {
+  color: #fff;
+}
+.homepage-container.dark .time-box small {
+  color: #ccc;
+}
+
+/* Inquiry form */
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.phone-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.phone-row label {
+  font-size: 0.9rem;
+}
+.phone-row select {
+  padding: 5px;
+}
+.phone-row input[type="text"] {
+  flex: 1;
+  padding: 5px;
+}
+.inquiry-type {
+  display: flex;
+  gap: 15px;
+}
+.inquiry-type label {
+  font-size: 0.9rem;
+}
+.work-exp-input {
+  width: 60px;
+  margin-left: 10px;
+  padding: 3px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #ec244f;
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  text-align: center;
+  transition: background 0.3s;
+}
+.cta-btn:hover {
+  background: #c71d3e;
+}
+
+/* Corporate training */
+.corporate-training {
+  background: #fff;
+  border: 1px dashed #ccc;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+.corporate-training h4 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+.contact-us-btn {
+  display: inline-block;
+  background: #ec244f;
+  color: #fff;
+  text-decoration: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.contact-us-btn:hover {
+  background: #c71d3e;
+}
+
+/* Dark mode overrides for corporate training box */
+.homepage-container.dark .corporate-training {
+  background: #444;
+  border-color: #555;
+}
+
+/* Learn Now button container (if needed) */
+.learn-btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.learn-btn {
+  display: inline-block;
+  background: #ec244f;
+  color: #fff;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+.learn-btn:hover {
+  background: #c71d3e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .why-join-content {
+    flex-direction: column;
+  }
+  .why-join-cards {
+    grid-template-columns: 1fr;
+  }
+  .why-join-right {
+    margin-top: 20px;
+  }
+}
+
+/* QUIZ SECTION (Light Mode by default) */
+.quiz-section {
+  margin-top: 40px;
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.quiz-title {
+  font-size: 1.8rem;
+  color: #ec244f;
+  margin-bottom: 10px;
+}
+
+.quiz-section p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.quiz-box-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+
+.quiz-box {
+  background: #f7f7f7;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quiz-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.quiz-box img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.quiz-box h3 {
+  font-size: 1rem;
+  color: #333;
+}
+
+.quiz-explore-container {
+  text-align: center;
+}
+
+.quiz-explore-btn {
+  display: inline-block;
+  background: #ec244f;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.quiz-explore-btn:hover {
+  background: #c71d3e;
+}
+
+/* Dark Mode Overrides */
+.homepage-container.dark .quiz-section {
+  background: #1f1f1f;
+  border-color: #444;
+  color: #eee;
+}
+
+.homepage-container.dark .quiz-section p {
+  color: #ccc;
+}
+
+.homepage-container.dark .quiz-box {
+  background: #2c2c2c;
+  border-color: #555;
+  color: #ddd;
+}
+
+.homepage-container.dark .quiz-box h3 {
+  color: #fff;
+}
+
+/* (Optional) Keep the Explore button the same, as it uses the brand color */
+.homepage-container.dark .quiz-explore-btn {
+  background: #ec244f;
+  color: #fff;
+}
+.homepage-container.dark .quiz-explore-btn:hover {
+  background: #c71d3e;
+}
+
+/* footer */
