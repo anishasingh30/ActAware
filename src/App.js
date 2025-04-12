@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import Goal from './pages/Goal';
 import Footer from './pages/Footer';
 import ApplicationForm from "./components/Auth/ApplictionForm";
+import Login from "./components/Auth/LoginForm";
+import Register from './pages/RegisterForm';
 import './App.css';
 
 function App() {
@@ -21,6 +23,14 @@ function App() {
                     <Route
                         path="/apply"
                         element={<ApplicationForm userId={userId} />}
+                    />
+                    <Route
+                        path="/signup"
+                        element={<Login userId={userId} />}
+                    />
+                    <Route
+                        path="/register"
+                        element={<Register userId={userId} />}
                     />
                 </Routes>
                 <Footer />
