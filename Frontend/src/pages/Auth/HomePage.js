@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../styles/HomePage.css";
-import { FaFacebook, FaTwitter, FaInstagram, FaPinterest } from 'react-icons/fa';
-
+import ThemeToggle from "../../components/UI/ThemeToggle";
 
 const HomePage = () => {
   const [theme, setTheme] = useState("light");
@@ -21,7 +20,7 @@ const HomePage = () => {
   const [seconds, setSeconds] = useState("00");
 
   // Target date/time: 12th March (Year can be adjusted)
-  const targetDate = new Date("2025-03-12T00:00:00");
+  const targetDate = new Date("2025-08-12T00:00:00");
 
   // Countdown logic
   useEffect(() => {
@@ -62,12 +61,15 @@ const HomePage = () => {
   // Submit form data to the backend
   const handleSubmitApplication = async () => {
     try {
-      const response = await axios.post("http://localhost:3006/api/applications", {
-        countryCode,
-        phone,
-        inquiry,
-        workExp
-      });
+      const response = await axios.post(
+        "http://localhost:3006/api/applications",
+        {
+          countryCode,
+          phone,
+          inquiry,
+          workExp,
+        }
+      );
       alert("Application submitted successfully!");
       // Reset form fields
       setPhone("");
@@ -83,25 +85,29 @@ const HomePage = () => {
       {/* SIDE NAV */}
       <aside className="side-nav">
         <nav className="side-nav-menu">
-          <Link to="/" className="side-nav-item">🏠 Home</Link>
-          <Link to="/about" className="side-nav-item">👥 About</Link>
-          <Link to="/lessons" className="side-nav-item">📚 Lessons</Link>
-          <Link to="/quiz-categories" className="side-nav-item">❓ Quiz</Link>
-          <Link to="/contact" className="side-nav-item">📞 Contact Us</Link>
-          <Link to="/register" className="side-nav-item">📝 Register</Link>
-          <Link to="/login" className="side-nav-item">🔑 Login</Link>
+          <Link to="/" className="side-nav-item">
+            🏠 Home
+          </Link>
+          <Link to="/about" className="side-nav-item">
+            👥 About
+          </Link>
+          <Link to="/lessons" className="side-nav-item">
+            📚 Lessons
+          </Link>
+          <Link to="/quiz-categories" className="side-nav-item">
+            ❓ Quiz
+          </Link>
+          <Link to="/contact" className="side-nav-item">
+            📞 Contact Us
+          </Link>
+          {/* <Link to="/register" className="side-nav-item">
+            📝 Register
+          </Link> */}
+          <Link to="/profile" className="side-nav-item">
+            👤Profile
+          </Link>
         </nav>
-        <div className="topbar-right">
-          {/* Light/Dark Dropdown */}
-          <select
-            className="theme-dropdown"
-            onChange={handleThemeChange}
-            value={theme}
-          >
-            <option value="light">☀ Light</option>
-            <option value="dark">🌙 Dark</option>
-          </select>
-        </div>
+        <ThemeToggle />
       </aside>
 
       {/* MAIN CONTENT */}
@@ -109,15 +115,13 @@ const HomePage = () => {
         {/* HERO SECTION */}
         <section className="hero-section">
           <div className="hero-content">
-            <h1>Courses YOU Need, Taught by the Best Instructors in the World.</h1>
+            <h1>
+              Courses YOU Need, Taught by the Best Instructors in the World.
+            </h1>
             <p>
-              Improve your sign language skills with interactive courses, taught by
-              leading experts in the field. Start your journey today!
+              Improve your sign language skills with interactive courses, taught
+              by leading experts in the field. Start your journey today!
             </p>
-            <div className="hero-buttons">
-              <button className="browse-btn">Browse Upcoming Courses</button>
-              <button className="highlight-btn">Dry Needling in Bellingham, WA!</button>
-            </div>
           </div>
         </section>
 
@@ -126,14 +130,15 @@ const HomePage = () => {
           <div className="brand-story-content">
             <h2>Sign Language’s Ancient Roots</h2>
             <p>
-              Sign language has a rich heritage spanning centuries, used to break 
-              communication barriers and unite diverse communities. Inspired by 
-              ancient gestures and cultural practices, our platform aims to keep 
-              the essence of sign language alive, while adapting to modern needs.
+              Sign language has a rich heritage spanning centuries, used to
+              break communication barriers and unite diverse communities.
+              Inspired by ancient gestures and cultural practices, our platform
+              aims to keep the essence of sign language alive, while adapting to
+              modern needs.
             </p>
             <p>
-              We craft high-performance lessons that combine contemporary 
-              educational techniques with the timeless beauty of sign language, 
+              We craft high-performance lessons that combine contemporary
+              educational techniques with the timeless beauty of sign language,
               transforming how you communicate.
             </p>
             <Link to="/about" className="read-more-link">
@@ -151,23 +156,38 @@ const HomePage = () => {
               <div className="why-join-cards">
                 <div className="why-join-card">
                   <h3>Purdue’s Global Advantage</h3>
-                  <p>Learn from world-class Deaf educators recognized for innovative sign language instruction.</p>
+                  <p>
+                    Learn from world-class Deaf educators recognized for
+                    innovative sign language instruction.
+                  </p>
                 </div>
                 <div className="why-join-card">
                   <h3>Applied Learning</h3>
-                  <p>Gain hands-on experience with real-life sign language scenarios, guided by interactive videos and practice sessions.</p>
+                  <p>
+                    Gain hands-on experience with real-life sign language
+                    scenarios, guided by interactive videos and practice
+                    sessions.
+                  </p>
                 </div>
                 <div className="why-join-card">
                   <h3>Official Partner: Meta</h3>
-                  <p>Access specialized sign language tools endorsed by leading tech giants, bridging communication gaps online.</p>
+                  <p>
+                    Access specialized sign language tools endorsed by leading
+                    tech giants, bridging communication gaps online.
+                  </p>
                 </div>
                 <div className="why-join-card">
                   <h3>ChatGPT Generative AI Tools</h3>
-                  <p>Harness AI-driven suggestions for sign translations, grammar corrections, and more.</p>
+                  <p>
+                    Harness AI-driven suggestions for sign translations, grammar
+                    corrections, and more.
+                  </p>
                 </div>
               </div>
               <div className="learn-btn-container">
-                <Link to="/lessons" className="learn-btn">Learn Now</Link>
+                <Link to="/lessons" className="learn-btn">
+                  Learn Now
+                </Link>
               </div>
             </div>
 
@@ -273,15 +293,24 @@ const HomePage = () => {
               <h3>Alphabet Quiz</h3>
             </div>
             <div className="quiz-box">
-              <img src="/assets/number-blocks_imresizer.png" alt="Numbers Quiz" />
+              <img
+                src="/assets/number-blocks_imresizer.png"
+                alt="Numbers Quiz"
+              />
               <h3>Numbers Quiz</h3>
             </div>
             <div className="quiz-box">
-              <img src="/assets/tagline_imresizer.png" alt="Basic Phrases Quiz" />
+              <img
+                src="/assets/tagline_imresizer.png"
+                alt="Basic Phrases Quiz"
+              />
               <h3>Basic Phrases Quiz</h3>
             </div>
             <div className="quiz-box">
-              <img src="/assets/proofreading_imresizer.png" alt="Grammar Quiz" />
+              <img
+                src="/assets/proofreading_imresizer.png"
+                alt="Grammar Quiz"
+              />
               <h3>Grammar Quiz</h3>
             </div>
             <div className="quiz-box">
@@ -307,7 +336,6 @@ const HomePage = () => {
             </Link>
           </div>
         </section>
-
       </main>
     </div>
   );

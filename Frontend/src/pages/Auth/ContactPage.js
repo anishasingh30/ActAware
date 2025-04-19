@@ -1,23 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { FaSun, FaMoon } from "react-icons/fa";
 import "../../styles/ContactPage.css";
 
 const ContactPage = () => {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleToggleTheme = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
-    <div className={`contact-page ${darkMode ? "dark" : ""}`}>
+    <div className="contact-page">
       {/* Header */}
       <header className="contact-header">
         <h1>Contact Us</h1>
-        <button className="theme-toggle" onClick={handleToggleTheme}>
-          {darkMode ? <FaSun size={20} /> : <FaMoon size={20} />}
-        </button>
       </header>
 
       <div className="contact-container">
@@ -25,7 +15,8 @@ const ContactPage = () => {
         <div className="contact-card">
           <h2>Talk to a member of our Sign Language Team</h2>
           <p>
-            Need help finding the right sign language program or pricing? Our experts can guide you in selecting the best fit for your needs.
+            Need help finding the right sign language program or pricing? Our
+            experts can guide you in selecting the best fit for your needs.
           </p>
           <Link to="/lessons" className="contact-button">
             Contact Support Team
@@ -36,8 +27,9 @@ const ContactPage = () => {
         <div className="contact-card">
           <h2>Account support help you for more</h2>
           <p>
-            Our help center is always open for signers. If you can’t find the answer you need, we’re here to assist you.
-            Thankyou for visiting our website and we hope to see you soon.
+            Our help center is always open for signers. If you can’t find the
+            answer you need, we’re here to assist you. Thank you for visiting
+            our website, and we hope to see you soon.
           </p>
           <Link to="/lessons" className="contact-button">
             Go to the help centre
@@ -51,53 +43,122 @@ const ContactPage = () => {
         <div className="offices-grid">
           <div>
             <h3>Global HQ – MAP</h3>
-            <p>123 Sign Lane<br />Deaf City, SC 91015<br />signlanguage.global</p>
+            <p>
+              123 Sign Lane
+              <br />
+              Deaf City, SC 91015
+              <br />
+              signlanguage.global
+            </p>
           </div>
           <div>
             <h3>Australia – MAP</h3>
-            <p>56 Aussie Signs Ave<br />Melbourne, VIC 3000<br />signlanguage.com/au</p>
+            <p>
+              56 Aussie Signs Ave
+              <br />
+              Melbourne, VIC 3000
+              <br />
+              signlanguage.com/au
+            </p>
           </div>
           <div>
             <h3>Brazil – MAP</h3>
-            <p>Av. Libras 100<br />São Paulo, SP 01000<br />signlanguage.com/br</p>
+            <p>
+              Av. Libras 100
+              <br />
+              São Paulo, SP 01000
+              <br />
+              signlanguage.com/br
+            </p>
           </div>
           <div>
             <h3>Canada – MAP</h3>
-            <p>987 Maple Deaf Rd<br />Toronto, ON A1B 2C3<br />signlanguage.com/ca</p>
+            <p>
+              987 Maple Deaf Rd
+              <br />
+              Toronto, ON A1B 2C3
+              <br />
+              signlanguage.com/ca
+            </p>
           </div>
           <div>
             <h3>Germany – MAP</h3>
-            <p>Neue Zeichenstraße 7<br />Berlin, 10115<br />signlanguage.de</p>
+            <p>
+              Neue Zeichenstraße 7<br />
+              Berlin, 10115
+              <br />
+              signlanguage.de
+            </p>
           </div>
           <div>
             <h3>India – MAP</h3>
-            <p>45 Sign Nagar<br />New Delhi, 110001<br />signlanguage.in</p>
+            <p>
+              45 Sign Nagar
+              <br />
+              New Delhi, 110001
+              <br />
+              signlanguage.in
+            </p>
           </div>
           <div>
             <h3>Global HQ – MAP</h3>
-            <p>123 Sign Lane<br />Deaf City, SC 91015<br />signlanguage.global</p>
+            <p>
+              123 Sign Lane
+              <br />
+              Deaf City, SC 91015
+              <br />
+              signlanguage.global
+            </p>
           </div>
           <div>
             <h3>Australia – MAP</h3>
-            <p>56 Aussie Signs Ave<br />Melbourne, VIC 3000<br />signlanguage.com/au</p>
+            <p>
+              56 Aussie Signs Ave
+              <br />
+              Melbourne, VIC 3000
+              <br />
+              signlanguage.com/au
+            </p>
           </div>
           <div>
             <h3>Brazil – MAP</h3>
-            <p>Av. Libras 100<br />São Paulo, SP 01000<br />signlanguage.com/br</p>
+            <p>
+              Av. Libras 100
+              <br />
+              São Paulo, SP 01000
+              <br />
+              signlanguage.com/br
+            </p>
           </div>
           <div>
             <h3>Canada – MAP</h3>
-            <p>987 Maple Deaf Rd<br />Toronto, ON A1B 2C3<br />signlanguage.com/ca</p>
+            <p>
+              987 Maple Deaf Rd
+              <br />
+              Toronto, ON A1B 2C3
+              <br />
+              signlanguage.com/ca
+            </p>
           </div>
           <div>
             <h3>Germany – MAP</h3>
-            <p>Neue Zeichenstraße 7<br />Berlin, 10115<br />signlanguage.de</p>
+            <p>
+              Neue Zeichenstraße 7<br />
+              Berlin, 10115
+              <br />
+              signlanguage.de
+            </p>
           </div>
           <div>
             <h3>India – MAP</h3>
-            <p>45 Sign Nagar<br />New Delhi, 110001<br />signlanguage.in</p>
+            <p>
+              45 Sign Nagar
+              <br />
+              New Delhi, 110001
+              <br />
+              signlanguage.in
+            </p>
           </div>
-          {/* Add or remove offices as needed */}
         </div>
       </section>
     </div>
